@@ -1,7 +1,9 @@
+/*Index custom CSS file*/
 :root {
   font-size: 16px;
 }
 
+/*Loader*/
 .loader {
   margin-top: 300px;
   border: 8px solid white;
@@ -34,6 +36,7 @@
   }
 }
 
+/*tabs used in the Result section*/
 .tab {
   background-color: #3eabef;
   padding: 10px;
@@ -43,7 +46,8 @@
   font-size: 1.3em;
 }
 
-.active,.tab:hover {
+.active,
+.tab:hover {
   cursor: pointer;
   background-color: #2a86bf;
 }
@@ -52,28 +56,29 @@ a:link {
   text-decoration: none;
 }
 
-.navigation{
+.navigation {
   background-color: #E9ECEF;
-  color:black;
+  color: black;
 }
 
-.main-title{
-  color:black;
-
+/*main-title i.e. 'iMDB'*/
+.main-title {
+  color: black;
 }
-.main-title:hover{
+
+.main-title:hover {
   background-color: #bbbec1;
 }
-.error{
-  color:red;
-}
-#Result_title{
+
+#Result_title {
   font-size: 2em;
 }
 
-#Result_poster{
+#Result_poster {
   cursor: pointer;
-} 
+}
+
+/*Censor Ratings*/
 .rated {
   font-family: 'Archivo Black';
   font-size: 1.9rem;
@@ -85,11 +90,12 @@ a:link {
   cursor: pointer;
 }
 
-#Basic-details{
+#Basic-details {
   cursor: pointer;
 }
 
-.info_name{
+/*Ratings table info*/
+.info_name {
   display: block;
 }
 
@@ -131,8 +137,9 @@ a:link {
 }
 
 /*Medium Devices*/
+
 @media screen and (max-width:768px) {
-  .info_name{
+  .info_name {
     display: none;
   }
 }

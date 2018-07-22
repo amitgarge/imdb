@@ -1,3 +1,5 @@
+<!-- index.html file-->
+
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
 
   <body>
     <div class="container">
-      <section id="main">
+      <section id="main"> <!--Main section starts here, includes search bar-->
         <h1>
           IMDb
           <small class="text-muted">Internet Movie Database</small>
@@ -37,8 +39,9 @@
         <h3 class="display-4">
           Search
         </h3>
+        <!--search by title and year(optional)-->
         <div class="card m-1">
-          <h5 class="card-header">By Name</h5>
+          <h5 class="card-header">By Title</h5>
           <div class="card-body">
             <div class="row">
               <div class="col-md-8 p-0">
@@ -52,16 +55,18 @@
                   </div>
                 </div>
               </div>
-
+              <!--search button-->
               <div class="col-md-2 pt-3">
                 <a class="btn btn-outline-success d-flex align-items-center justify-content-center" id="searchByTitleAndYear" href="#" role="button">Search</a>
               </div>
+              <!--reset button-->
               <div class="col-md-2 pt-3">
                 <a class="btn btn-outline-danger d-flex align-items-center justify-content-center" id="TitleAndYearReset" href="#" role="button">Reset</a>
               </div>
             </div>
           </div>
         </div>
+        <!-- search by IMDb id -->
         <div class="card mt-3">
           <h5 class="card-header">By ID</h5>
           <div class="card-body">
@@ -71,9 +76,11 @@
                   <input type="text" id="ID" class="form-control" placeholder="Search by the IMDb ID">
                 </div>
               </div>
+              <!--search button-->
               <div class="col-12 col-sm-2 pt-3">
                 <a class="btn btn-outline-success d-flex align-items-center justify-content-center" id="searchByID" href="#" role="button">Search</a>
               </div>
+              <!--reset button-->
               <div class="col-12 col-sm-2 pt-3">
                 <a class="btn btn-outline-danger d-flex align-items-center justify-content-center" id="ResetIDField" href="#" role="button">Reset</a>
               </div>
@@ -82,42 +89,54 @@
         </div>
         <br />
         <br />
-      </section>
+      </section><!-- Main section ends -->
+
+      <!--Loader-->
       <div class="container d-flex justify-content-center">
         <div class="loader"></div>
       </div>
 
+      <!--search result section-->
       <section id="search_result">
-          <div class="container navigation d-flex justify-content-start fixed-top">
-            <a href="#" class="main-title" data-toggle="tooltip" data-placement="bottom" title="Back"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br /> 
-          <div class="container">
-            <div class="mb-2 d-block d-md-none d-lg-none d-flex justify-content-center">
-              <div class="row">
-                <div class="col-12">
-                  <img src="" id="Result_poster-small" class="p-2 img-details conf-img-one" alt="Poster" width="200" height="250" onerror="this.src='img/dummy.jpg';">
-                </div>
+        <!--header-->
+        <div class="container navigation d-flex justify-content-start fixed-top">
+          <a href="#" class="main-title" data-toggle="tooltip" data-placement="bottom" title="Back">
+            <h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1>
+          </a>
+        </div><!--header ends-->
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="container">
+          <!--Poster visible only on small screens-->
+          <div class="mb-2 d-block d-md-none d-lg-none d-flex justify-content-center">
+            <div class="row">
+              <div class="col-12">
+                <img src="" id="Result_poster-small" class="p-2 img-details conf-img-one" alt="Poster" width="200" height="250" onerror="this.src='img/dummy.jpg';">
               </div>
             </div>
-            <div class="row">
-              <div class="col-12 col-md-4 d-md-block d-flex justify-content-center align-items-center flex-wrap">
-                <span id="Result_title"></span>
-                <br />
-                <span id="Result_year"></span><br />
-                <span id="Result_type"></span>
+          </div><!--Small screen poster ends--> 
+          <div class="row">
+            <!--title-->
+            <div class="col-12 col-md-4 d-md-block d-flex justify-content-center align-items-center flex-wrap">
+              <span id="Result_title"></span>
+              <br />
+              <span id="Result_year"></span><br />
+              <span id="Result_type"></span>
             </div>
+            <!--Poster visible on large scrrens-->
             <div class="col-md-4 d-none d-md-block">
               <img id="Result_poster" src="" height="200" class="img-fluid" onerror="this.src='img/dummy.jpg';">
             </div>
+            <!--Censor Rating-->
             <div class="col-12 col-md-4 d-md-block d-flex justify-content-center align-items-center">
               <span class="rated" data-toggle="tooltip" data-placement="bottom" title="Censor rated" id="Result_rated"></span>
             </div>
           </div>
+
           <div class="row">
+
             <div class="col-12 col-md-4 d-flex justify-content-center align-items-center">
               <p class="lead" id="Basic-details" data-toggle="tooltip" data-placement="bottom" title="Runtime">
                 <i class="far fa-clock"></i><b class="info_name"> Runtime<br /></b><span id="Result_runtime"></span>
@@ -137,16 +156,18 @@
         <hr>
         <br />
         <div class="container">
-          <h3 class="d-flex justify-content-center" >
+          <!--Ratings table-->
+          <h3 class="d-flex justify-content-center">
             Ratings
           </h3>
           <br />
           <div class="row RatingsTable"></div>
-        </div>
+        </div><!--Ratings table ends-->
         <hr>
         <br />
         <div class="container">
           <div id="tabs">
+            <!--Tab section-->
             <div class="row">
               <div class="col tab active" id="Plot-Casting" data-toggle="tooltip" data-placement="bottom" title="Plot and Casting details">
                 Plot and Casting
@@ -163,6 +184,7 @@
               <div class="row">
                 <div class="col">
                   <div id="Plot-Casting-details">
+                    <!--Tab1 click will expand this section-->
                     <div class="row">
                       <div class="col-4 col-md-4 information-title">
                         Plot:
@@ -199,6 +221,7 @@
                     </div>
                   </div>
                   <div id="imdb-details-info">
+                    <!--Tab2 click will expand this section-->
                     <div class="row">
                       <div class="col-4 col-md-4 information-title">
                         Imdb Id:
@@ -234,6 +257,7 @@
                   </div>
 
                   <div id="others-details">
+                    <!--Tab 3 click, will expand this section-->
                     <div class="row">
                       <div class="col-4 col-md-4 information-title">
                         Country:
@@ -258,7 +282,7 @@
                         <span id="Result_release-date"></span>
                       </div>
                     </div>
-                    
+
                     <div class="row">
                       <div class="col-4 col-md-4 information-title">
                         DVD:
@@ -288,7 +312,7 @@
                         Website:
                       </div>
                       <div class="col-8 col-md-8 website" data-toggle="tooltip" data-placement="top" title="Go to page">
-                        <a id="website" target="_blank" href="" ></a>
+                        <a id="website" target="_blank" href=""></a>
                       </div>
                     </div>
                     <div class="row totalSeasons">
@@ -304,17 +328,22 @@
               </div>
               <br />
             </div>
-          </div>
+          </div><!--Tabs ends-->
         </div>
-      </section>
+      </section><!--search result ends-->
+
+      <!--Error section-->
       <section id="Error">
+        <!--Header-->
         <div class="container navigation d-flex justify-content-start fixed-top">
-            <a href="#" class="main-title-error"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
+          <a href="#" class="main-title">
+            <h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1>
+          </a>
+        </div><!--Header ends-->
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="container p-0 err">
           <div class="row">
             <div class="col-12 d-flex justify-content-center">
@@ -330,15 +359,17 @@
         </div>
       </section>
 
-      <!--TimeOut -->
+      <!--TimeOut section -->
       <div class="time-out container">
         <div class="container navigation d-flex justify-content-start fixed-top">
-            <a href="#" class="main-title"><h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1></a>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
+          <a href="#" class="main-title">
+            <h1 class="p-3 font-weight-light mb-0"><i class="fa fa-angle-left"></i> <b>i</b>MDB</h1>
+          </a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
         <div class="container p-0 err">
           <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
@@ -363,6 +394,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
+    <!--Custom js Files-->
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/index2.js"></script>
 
