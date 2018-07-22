@@ -34,7 +34,7 @@
   }
 }
 
-.tabs {
+.tab {
   background-color: #3eabef;
   padding: 10px;
   border: 1px solid black;
@@ -43,7 +43,7 @@
   font-size: 1.3em;
 }
 
-.tabs:hover {
+.active,.tab:hover {
   cursor: pointer;
   background-color: #2a86bf;
 }
@@ -64,23 +64,37 @@ a:link {
 .main-title:hover{
   background-color: #bbbec1;
 }
-
-#movie-title{
+.error{
+  color:red;
+}
+#Result_title{
   font-size: 2em;
 }
-.rating {
+
+#Result_poster{
+  cursor: pointer;
+} 
+.rated {
   font-family: 'Archivo Black';
   font-size: 1.9rem;
   float: right;
   border: 2px solid black;
   border-radius: 50%;
   padding: 5px;
-
+  word-wrap: break-word;
+  cursor: pointer;
 }
 
-#movie-Release-year {
+#Basic-details{
+  cursor: pointer;
+}
+
+.info_name{
+  display: block;
+}
+
+#Result_year {
   color: gray;
-  font-size: 25px;
 }
 
 .info {
@@ -114,4 +128,11 @@ a:link {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/*Medium Devices*/
+@media screen and (max-width:768px) {
+  .info_name{
+    display: none;
+  }
 }
