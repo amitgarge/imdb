@@ -1,6 +1,6 @@
 # IMDb-Internet Movie Database
 
-	The Internet Movie Database (IMDb) is an online database of information related to films, television programs, and video games, including cast, production crew, fictional characters, biographies, plot summaries, trivia and reviews.
+IMDb is an online database of information related to world films, television programs, home videos and video games, and internet streams, including cast, production crew and personnel biographies, plot summaries, trivia, and fan reviews and ratings.
 
 In this web Application, The Open Movie Database (OMDb) API is used, which is a RESTful web service to obtain movie information, all content and images, and display the information using html elements.
 
